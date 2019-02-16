@@ -16,15 +16,13 @@ class ProductPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Image.asset(imageUrl),
-          Container(
-              padding: EdgeInsets.all(10.0),
-              child: Text(title)),
+          Container(padding: EdgeInsets.all(10.0), child: Text(title)),
           Container(
             padding: EdgeInsets.all(10.0),
             child: RaisedButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context, true),
               child: Text(
-                'BACK',
+                'DELETE',
               ),
             ),
           )
