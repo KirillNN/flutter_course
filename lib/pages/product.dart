@@ -4,12 +4,19 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Product Detail'),
-      ),
-      body: Center(
-        child: Text('On the Product Page'),
-      ),
-    );
+        appBar: AppBar(
+          title: Text('Product Detail'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Text('On the Product Page'),
+            RaisedButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(
+                'BACK',
+              ),
+            )
+          ],
+        ));
   }
 }
