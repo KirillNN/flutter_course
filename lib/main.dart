@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
 //      home: AuthPage(),
       routes: {
-        '/': (BuildContext context) => ProductsPage(),
+        '/': (BuildContext context) => ProductsPage(_products, _addProduct, _deleteProduct),
         '/admin': (BuildContext context) => ProductAdminPage(),
       },
       onGenerateRoute: (RouteSettings setting) {
