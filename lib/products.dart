@@ -8,7 +8,9 @@ class Products extends StatelessWidget {
 
   Products(this.products, {this.deleteProduct});
 
+
   Widget _buildProductItem(BuildContext context, int index) {
+    print(products.toString());
     return Card(
       child: Column(
         children: <Widget>[
@@ -18,9 +20,9 @@ class Products extends StatelessWidget {
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               FlatButton(
-                  onPressed: () => Navigator.push<bool>(
-                          context,
-).then((bool value) {
+                  onPressed: () => Navigator.pushNamed<bool>(
+                              context, '/product/' + index.toString())
+                          .then((bool value) {
                         if (value) deleteProduct(index);
                       }),
                   child: Text('Details'))
