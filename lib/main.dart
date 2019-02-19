@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
+import './pages/product.dart';
 import './pages/product_admin.dart';
 import './pages/products.dart';
-import './pages/product.dart';
 
 void main() {
-  debugPaintBaselinesEnabled = true;
+//  debugPaintBaselinesEnabled = true;
   runApp(MyApp());
 }
 

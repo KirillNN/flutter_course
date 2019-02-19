@@ -14,13 +14,13 @@ class ProductCreatePageState extends State<ProductCreatePage> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-//        TextField(
-//          onChanged: (String value) {
-//            setState(() {
-//              titleValue = value;
-//            });
-//          },
-//        ),
+        TextField(
+          onChanged: (String value) {
+            setState(() {
+              titleValue = value;
+            });
+          },
+        ),
         Text(titleValue),
       ],
     );
