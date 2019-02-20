@@ -48,7 +48,9 @@ class ProductCreatePageState extends State<ProductCreatePage> {
               });
             },
           ),
-          SizedBox(height: 10.0,),
+          SizedBox(
+            height: 10.0,
+          ),
           RaisedButton(
             onPressed: () {
               final Map<String, dynamic> product = {
@@ -58,9 +60,10 @@ class ProductCreatePageState extends State<ProductCreatePage> {
                 'image': 'assets/food.jpg'
               };
               widget.addProduct(product);
-              Navigator.pushReplacementNamed(context, '/');
+              Navigator.pushReplacementNamed(context, '/products');
             },
-            child: Text('Save'), color: Colors.deepPurpleAccent,
+            child: Text('Save'),
+            color: Colors.deepPurpleAccent,
           )
         ],
       ),

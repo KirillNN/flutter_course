@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './pages/auth.dart';
 import './pages/product.dart';
 import './pages/product_admin.dart';
 import './pages/products.dart';
@@ -36,7 +37,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
 //      home: AuthPage(),
       routes: {
-        '/': (BuildContext context) => ProductsPage(
+        '/': (BuildContext context) => AuthPage(),
+        '/products': (BuildContext context) => ProductsPage(
               _products,
             ),
         '/admin': (BuildContext context) =>
