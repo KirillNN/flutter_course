@@ -33,13 +33,19 @@ class Products extends StatelessWidget {
                       color: Theme.of(context).accentColor,
                       borderRadius: BorderRadius.circular(5.0)),
                   child: Text(
-                   '\$${products[index]['price'].toString()}',
+                    '\$${products[index]['price'].toString()}',
                     style: TextStyle(color: Colors.white),
                   ),
                 )
               ],
             ),
           ),
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.5),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4.0),
+                  border: Border.all(color: Colors.grey, width: 1.0)),
+              child: Text('WiFi')),
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
