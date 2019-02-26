@@ -7,7 +7,7 @@ import './pages/products.dart';
 // import 'package:flutter/rendering.dart';
 
 void main() {
-  // debugPaintSizeEnabled = true;
+//   debugPaintSizeEnabled = true;
   // debugPaintBaselinesEnabled = true;
   // debugPaintPointersEnabled = true;
   runApp(MyApp());
