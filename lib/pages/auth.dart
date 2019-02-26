@@ -19,46 +19,54 @@ class _AuthPageState extends State<AuthPage> {
         title: Text('Login'),
       ),
       body: Container(
+          padding: EdgeInsets.all(10.0),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.5), BlendMode.dstATop),
+                fit: BoxFit.cover,
+                image: AssetImage('assets/background.jpg')),
+          ),
           child: ListView(
-        children: <Widget>[
-          TextField(
-            keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(labelText: 'E-mail'),
-            onChanged: (String value) {
-              setState(() {
-                _emailValue = value;
-              });
-            },
-          ),
-          TextField(
-              onChanged: (String value) {
-                setState(() {
-                  _passwordValue = value;
-                });
-              },
-              obscureText: true,
-              decoration: InputDecoration(labelText: 'Password')),
-          SwitchListTile(
-              title: Text('Accept Terms'),
-              value: _acceptTerms,
-              onChanged: (bool value) {
-                setState(() {
-                  _acceptTerms = value;
-                });
-              }),
-          SizedBox(
-            height: 10.0,
-          ),
-          RaisedButton(
-            onPressed: () {
-              print(_emailValue);
-              print(_passwordValue);
-              Navigator.pushReplacementNamed(context, '/products');
-            },
-            child: Text('LOGIN'),
-          ),
-        ],
-      )),
+            children: <Widget>[
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(labelText: 'E-mail'),
+                onChanged: (String value) {
+                  setState(() {
+                    _emailValue = value;
+                  });
+                },
+              ),
+              TextField(
+                  onChanged: (String value) {
+                    setState(() {
+                      _passwordValue = value;
+                    });
+                  },
+                  obscureText: true,
+                  decoration: InputDecoration(labelText: 'Password')),
+              SwitchListTile(
+                  title: Text('Accept Terms'),
+                  value: _acceptTerms,
+                  onChanged: (bool value) {
+                    setState(() {
+                      _acceptTerms = value;
+                    });
+                  }),
+              SizedBox(
+                height: 10.0,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  print(_emailValue);
+                  print(_passwordValue);
+                  Navigator.pushReplacementNamed(context, '/products');
+                },
+                child: Text('LOGIN'),
+              ),
+            ],
+          )),
     );
   }
 }
