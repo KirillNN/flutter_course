@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 class ProductPage extends StatelessWidget {
   final String title;
   final String imageUrl;
+  final String description;
+  final double price;
 
-  ProductPage(this.title, this.imageUrl);
+  ProductPage(this.title, this.imageUrl, this.description, this.price);
 
   _showWarningDialog(BuildContext context) {
     showDialog(
@@ -49,13 +51,14 @@ class ProductPage extends StatelessWidget {
           children: <Widget>[
             Image.asset(imageUrl),
             Container(padding: EdgeInsets.all(10.0), child: Text(title)),
+            Container(padding: EdgeInsets.all(10.0), child: Text(description)),
+            Container(
+                padding: EdgeInsets.all(10.0), child: Text(price.toString())),
             Container(
               padding: EdgeInsets.all(10.0),
-              child: RaisedButton(
+              child: IconButton(
+                icon: Icon(Icons.delete_forever),
                 onPressed: () => _showWarningDialog(context),
-                child: Text(
-                  'DELETE',
-                ),
               ),
             )
           ],
