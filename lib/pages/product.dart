@@ -50,10 +50,43 @@ class ProductPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Image.asset(imageUrl),
-            Container(padding: EdgeInsets.all(10.0), child: Text(title)),
-            Container(padding: EdgeInsets.all(10.0), child: Text(description)),
-            Container(
-                padding: EdgeInsets.all(10.0), child: Text(price.toString())),
+            SizedBox(
+              height: 8.0,
+            ),
+            Row(
+              children: <Widget>[
+                SizedBox(
+                  width: 8.0,
+                ),
+                Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 1.0),
+                        borderRadius: BorderRadius.circular(10.0)),
+                    padding: EdgeInsets.all(10.0),
+                    child: Text(
+                      '\$${price.toString()}',
+                      style: TextStyle(color: Theme.of(context).accentColor),
+                    )),
+                SizedBox(
+                  width: 8.0,
+                ),
+                Expanded(
+                  child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 1.0),
+                          borderRadius: BorderRadius.circular(10.0)),
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                        description,
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                        softWrap: true,
+                      )),
+                ),
+                SizedBox(
+                  width: 8.0,
+                ),
+              ],
+            ),
             Container(
               padding: EdgeInsets.all(10.0),
               child: IconButton(
