@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './price_tag.dart';
+import './title_tag.dart';
 
 class Products extends StatelessWidget {
   final List<Map<String, dynamic>> products;
@@ -18,13 +19,7 @@ class Products extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  products[index]['title'],
-                  style: TextStyle(
-                      fontSize: 26.0,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Oswald'),
-                ),
+                TitleTag(products[index]['title']),
                 SizedBox(
                   width: 8.0,
                 ),
