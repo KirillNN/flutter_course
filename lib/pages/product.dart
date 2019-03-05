@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../widgets/ui_elements/title_default.dart';
+
 class ProductPage extends StatelessWidget {
   final String title;
   final String imageUrl;
@@ -26,6 +28,10 @@ class ProductPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Image.asset(imageUrl),
+            SizedBox(
+              height: 8.0,
+            ),
+            TitleDefault(title),
             SizedBox(
               height: 8.0,
             ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './price_tag.dart';
-import './title_tag.dart';
+import '../ui_elements/title_default.dart';
 
 class ProductCard extends StatelessWidget {
   final Map<String, dynamic> product;
@@ -20,7 +20,7 @@ class ProductCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                TitleTag(product['title']),
+                TitleDefault(product['title']),
                 SizedBox(
                   width: 8.0,
                 ),
