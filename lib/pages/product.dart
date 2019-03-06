@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../widgets/products/address_tag.dart';
 import '../widgets/ui_elements/title_default.dart';
 
 class ProductPage extends StatelessWidget {
@@ -69,6 +70,10 @@ class ProductPage extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(
+              height: 10.0,
+            ),
+            AddressTag('Union Square, San Francisco'),
           ],
         ),
       ),
