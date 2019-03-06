@@ -13,6 +13,43 @@ class ProductPage extends StatelessWidget {
 
   ProductPage(this.title, this.imageUrl, this.description, this.price);
 
+  Widget _buildPriceDescriptionRow(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        SizedBox(
+          width: 8.0,
+        ),
+        Container(
+            decoration: BoxDecoration(
+                border: Border.all(width: 1.0),
+                borderRadius: BorderRadius.circular(10.0)),
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              '\$${price.toString()}',
+              style: TextStyle(color: Theme.of(context).accentColor),
+            )),
+        SizedBox(
+          width: 8.0,
+        ),
+        Expanded(
+          child: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(width: 1.0),
+                  borderRadius: BorderRadius.circular(10.0)),
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                description,
+                style: TextStyle(color: Theme.of(context).primaryColor),
+                softWrap: true,
+              )),
+        ),
+        SizedBox(
+          width: 8.0,
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -36,40 +73,7 @@ class ProductPage extends StatelessWidget {
             SizedBox(
               height: 8.0,
             ),
-            Row(
-              children: <Widget>[
-                SizedBox(
-                  width: 8.0,
-                ),
-                Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(width: 1.0),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(
-                      '\$${price.toString()}',
-                      style: TextStyle(color: Theme.of(context).accentColor),
-                    )),
-                SizedBox(
-                  width: 8.0,
-                ),
-                Expanded(
-                  child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(width: 1.0),
-                          borderRadius: BorderRadius.circular(10.0)),
-                      padding: EdgeInsets.all(10.0),
-                      child: Text(
-                        description,
-                        style: TextStyle(color: Theme.of(context).primaryColor),
-                        softWrap: true,
-                      )),
-                ),
-                SizedBox(
-                  width: 8.0,
-                ),
-              ],
-            ),
+            _buildPriceDescriptionRow(context),
             SizedBox(
               height: 10.0,
             ),
